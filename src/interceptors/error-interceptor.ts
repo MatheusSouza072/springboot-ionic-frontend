@@ -28,7 +28,7 @@ export class ErrorInterceptor implements HttpInterceptor {
             switch(errorObj.status) {
                 case 401: 
                 this.handle401();
-                break;
+                break; 
 
                 case 403:
                 this.handle403();
@@ -67,11 +67,11 @@ export class ErrorInterceptor implements HttpInterceptor {
             enableBackdropDismiss: false,
             buttons: [
                 {
-                    text: 'Ok'
+                    text: 'Ok' 
                 }
             ]
         });
-        alert.present();        
+        alert.present();         
     }
 }
 
