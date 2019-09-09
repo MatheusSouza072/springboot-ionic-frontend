@@ -12,24 +12,27 @@ export class MyApp {
 
   rootPage: string = 'HomePage';
 
-  pages: Array<{ title: string, component: string }>;
+  pages: Array<{title: string, component: string}>;
 
-  constructor(public platform: Platform,
-    public statusBar: StatusBar,
+  constructor(
+    public platform: Platform, 
+    public statusBar: StatusBar, 
     public splashScreen: SplashScreen,
-    public auth: AuthService) {
+    public auth: AuthService
+  ) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Profile', component: 'ProfilePage' },
       { title: 'Categorias', component: 'CategoriasPage' },
-      { title: 'Logout', component: '' }
+      { title: 'Carrinho', component: 'CartPage'},
+      { title: 'Logout', component: ''}
     ];
 
   }
 
-  initializeApp() {
+  initializeApp() { 
     this.platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
@@ -37,17 +40,17 @@ export class MyApp {
       this.splashScreen.hide();
     });
   }
- 
-  openPage(page: { title: string, component: string }) {
+
+  openPage(page : {title:string, component:string}) {
+
     switch (page.title) {
       case 'Logout':
-        this.auth.logout();
-        this.nav.setRoot('HomePage')
-        break;
+      this.auth.logout();
+      this.nav.setRoot('HomePage');
+      break;
 
-      default: this.nav.setRoot(page.component);
-
+      default:
+      this.nav.setRoot(page.component);
     }
-
   }
 }
