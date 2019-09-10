@@ -20,7 +20,7 @@ export class CartService {
         if (cart == null) {
             cart = this.createOrClearCart();
         }
-        return cart; 
+        return cart;
     }
 
     addProduto(produto: ProdutoDTO) : Cart {

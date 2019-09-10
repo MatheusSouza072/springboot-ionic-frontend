@@ -14,4 +14,3 @@ export class EstadoService {
         return this.http.get<EstadoDTO[]>(`${API_CONFIG.baseUrl}/estados`);
     }
 }
- 
