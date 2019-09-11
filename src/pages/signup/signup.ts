@@ -44,7 +44,7 @@ export class SignupPage {
       telefone3 : ['', []],
       estadoId : [null, [Validators.required]],
       cidadeId : [null, [Validators.required]]      
-    }); 
+    });
   }
 
   ionViewDidLoad() {

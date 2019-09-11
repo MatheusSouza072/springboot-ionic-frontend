@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { API_CONFIG } from '../../config/api.config';
-import { Observable } from 'rxjs/Rx'; 
+import { Observable } from 'rxjs/Rx'; // IMPORTANTE: IMPORT ATUALIZADO
 import { ProdutoDTO } from '../../models/produto.dto';
 
 @Injectable()
@@ -22,7 +22,7 @@ export class ProdutoService {
     let url = `${API_CONFIG.bucketBaseUrl}/prod${id}-small.jpg`
     return this.http.get(url, {responseType : 'blob'});
   }  
- 
+
   getImageFromBucket(id : string) : Observable<any> {
     let url = `${API_CONFIG.bucketBaseUrl}/prod${id}.jpg`
     return this.http.get(url, {responseType : 'blob'});
